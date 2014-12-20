@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+			 xmlns:tns="http://LameDuck"
+			 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			 xmlns="http://schemas.xmlsoap.org/wsdl/"
+			 targetNamespace="http://LameDuck"
+			 name="LameDuck">
+
+	<types>
+		<xsd:schema>
+			<xsd:import namespace="http://LameDuck" schemaLocation="LameDuck_schema.xsd"></xsd:import>
+		</xsd:schema>
+	</types>
+
+	<message name="getFlights">
+		<part xmlns:ns1="http://LameDuck" name="parameters" element="ns1:getFlights"></part>
+	</message>
+	<message name="getFlightsResponse">
+		<part xmlns:ns2="http://LameDuck" name="parameters" element="ns2:getFlightsResponse"></part>
+	</message>
+	<message name="bookFlight">
+		<part xmlns:ns3="http://LameDuck" name="parameters" element="ns3:bookFlight"></part>
+	</message>
+	<message name="bookFlightResponse">
+		<part xmlns:ns4="http://LameDuck" name="parameters" element="ns4:bookFlightResponse"></part>
+	</message>
+	<message name="cancelFlight">
+		<part xmlns:ns5="http://LameDuck" name="parameters" element="ns5:cancelFlight"></part>
+	</message>
+	<message name="cancelFlightResponse">
+		<part xmlns:ns6="http://LameDuck" name="parameters" element="ns6:cancelFlightResponse"></part>
+	</message>
+	<message name="FlightFaultMessage">
+		<part xmlns:ns7="http://LameDuck" name="parameters" element="ns7:FlightFault"></part>
+	</message>
+	
+	<portType name="LameDuckPortType">
+		<operation name="getFlights">
+			<input message="tns:getFlights"></input>
+			<output message="tns:getFlightsResponse"></output>
+		</operation>
+		<operation name="bookFlight">
+			<input message="tns:bookFlight"></input>
+			<output message="tns:bookFlightResponse"></output>
+			<fault message="tns:FlightFaultMessage" name="FlightFaultMessage"></fault>
+		</operation>
+		<operation name="cancelFlight">
+			<input message="tns:cancelFlight"></input>
+			<output message="tns:cancelFlightResponse"></output>
+			<fault message="tns:FlightFaultMessage" name="FlightFaultMessage"></fault>
+		</operation>
+	</portType>
+	
+	<binding name="LameDuckPortBinding" type="tns:LameDuckPortType">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+		<operation name="getFlights">
+			<soap:operation soapAction=""></soap:operation>
+			<input>
+				<soap:body use="literal"></soap:body>
+			</input>
+			<output>
+				<soap:body use="literal"></soap:body>
+			</output>
+		</operation>
+		<operation name="bookFlight">
+			<soap:operation soapAction=""></soap:operation>
+			<input>
+				<soap:body use="literal"></soap:body>
+			</input>
+			<output>
+				<soap:body use="literal"></soap:body>
+			</output>
+			<fault name="FlightFaultMessage">
+				<soap:fault name="FlightFaultMessage"></soap:fault>
+			</fault>
+		</operation>
+		<operation name="cancelFlight">
+			<soap:operation soapAction=""></soap:operation>
+			<input>
+				<soap:body use="literal"></soap:body>
+			</input>
+			<output>
+				<soap:body use="literal"></soap:body>
+			</output>
+			<fault name="FlightFaultMessage">
+				<soap:fault name="FlightFaultMessage"></soap:fault>
+			</fault>
+		</operation>
+	</binding>
+	
+	<service name="LameDuck">
+		<port name="LameDuckPort" binding="tns:LameDuckPortBinding">
+			<soap:address location="http://localhost:8080/LameDuck/LameDuck"></soap:address>
+		</port>
+	</service>
+</definitions>

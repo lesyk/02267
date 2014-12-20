@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0" 
+    targetNamespace="http://TravelGood" 
+    xmlns:tns="http://TravelGood" 
+    xmlns:ns1="urn://types.fastmoney.imm.dtu.dk"
+    xmlns:ns2="http://NiceView"
+    xmlns:ns3="http://LameDuck">
+  
+  <!-- Import types and elements from related services -->
+  <xsd:import namespace="http://NiceView" schemaLocation="NiceView/NiceView_schema.xsd"/>
+  <xsd:import namespace="http://LameDuck" schemaLocation="LameDuck/LameDuck_schema.xsd"/>
+  <xsd:import namespace="urn://types.fastmoney.imm.dtu.dk" schemaLocation="http://fastmoney.imm.dtu.dk:8080/BankService?xsd=1"/>
+  
+  <!-- Element related to customer id -->
+  <xsd:element name="customerId" type="tns:IdType"/>
+  
+  <!-- Elements related to TravelGood -->
+  <xsd:element name="StartItineraryResponse" nillable="false" type="tns:StartItineraryResponse"/>
+  <xsd:element name="GetItinerary" nillable="false" type="tns:GetItinerary"/>
+  <xsd:element name="GetItineraryResponse" nillable="false" type="tns:GetItineraryResponse"/>
+  <xsd:element name="BookItinerary" nillable="false" type="tns:BookItinerary"/>
+  <xsd:element name="BookItineraryResponse" nillable="false" type="tns:BookItineraryResponse"/>
+  <xsd:element name="CancelItinerary" nillable="false" type="tns:CancelItinerary"/>
+  <xsd:element name="CancelItineraryResponse" nillable="false" type="tns:CancelItineraryResponse"/>
+  
+  <!-- Elements related to NiceView -->
+    <xsd:element name="GetHotels" nillable="true" type="tns:GetHotels"/>
+    <xsd:element name="GetHotelsResponse" nillable="true" type="tns:GetHotelsResponse"/>
+    <xsd:element name="AddHotel" nillable="true" type="tns:AddHotel"/>
+    <xsd:element name="AddHotelResponse" nillable="true" type="tns:AddHotelResponse"/>
+  
+  <!-- Elements related to LameDuck -->
+    <xsd:element name="GetFlights" nillable="true" type="tns:GetFlights"/>
+    <xsd:element name="GetFlightsResponse" nillable="true" type="tns:GetFlightsResponse"/>
+    <xsd:element name="AddFlight" nillable="true" type="tns:AddFlight"/>
+    <xsd:element name="AddFlightResponse" nillable="true" type="tns:AddFlightResponse"/>
+    
+  <!-- Elements related to itinerary storage-->
+  <xsd:element name="HotelArray" nillable="true" type="tns:HotelArrayType"/>
+  <xsd:element name="FlightArray" nillable="true" type="tns:FlightArrayType"/>
+  
+
+    <!-- Types related to TravelGood -->
+    <xsd:complexType name="StartItineraryResponse">
+            <xsd:sequence>
+                    <xsd:element name="customerId" type="tns:IdType"/>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="GetItinerary">
+            <xsd:sequence>
+                    <xsd:element name="customerId" type="tns:IdType"/>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="GetItineraryResponse">
+            <xsd:sequence>
+                    <xsd:element name="itinerary" type="tns:ItineraryType"/>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="BookItinerary">
+            <xsd:sequence>
+                    <xsd:element name="customerId" type="tns:IdType"/>
+                    <xsd:element name="creditCard" type="ns1:creditCardInfoType"/>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="BookItineraryResponse">
+            <xsd:sequence>
+                    <xsd:element name="return" type="xsd:boolean"></xsd:element>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CancelItinerary">
+            <xsd:sequence>
+                    <xsd:element name="customerId" type="tns:IdType"/>
+                    <xsd:element name="creditCard" type="ns1:creditCardInfoType"/>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CancelItineraryResponse">
+            <xsd:sequence>
+                    <xsd:element name="return" type="xsd:boolean"></xsd:element>
+            </xsd:sequence>
+    </xsd:complexType>
+  
+  
+    <!-- Types related to NiceView -->
+    <xsd:complexType name="GetHotels">
+            <xsd:sequence>
+                    <xsd:element name="customerId" type="tns:IdType"/>
+                    <xsd:element name="parameters" type="ns2:getHotels"></xsd:element>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="GetHotelsResponse">
+            <xsd:sequence>
+                    <xsd:element name="return" type="ns2:HotelInfo" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AddHotel">
+            <xsd:sequence>
+                    <xsd:element name="customerId" type="tns:IdType"/>
+                    <xsd:element name="hotel" type="ns2:HotelInfo"></xsd:element>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AddHotelResponse">
+            <xsd:sequence>
+                    <xsd:element name="return" type="xsd:boolean"></xsd:element>
+            </xsd:sequence>
+    </xsd:complexType> 
+    
+    
+    <!-- Types related to LameDuck -->
+    <xsd:complexType name="GetFlights">
+            <xsd:sequence>
+                    <xsd:element name="customerId" type="tns:IdType"/>
+                    <xsd:element name="parameters" type="ns3:getFlights"></xsd:element>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="GetFlightsResponse">
+            <xsd:sequence>
+                    <xsd:element name="return" type="ns3:FlightInfo" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AddFlight">
+            <xsd:sequence>
+                    <xsd:element name="customerId" type="tns:IdType"/>
+                    <xsd:element name="flight" type="ns3:FlightInfo"></xsd:element>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AddFlightResponse">
+            <xsd:sequence>
+                    <xsd:element name="return" type="xsd:boolean"></xsd:element>
+            </xsd:sequence>
+    </xsd:complexType> 
+    
+    
+  <!-- Types related to itinerary storage-->
+  <xsd:complexType name="ItineraryType">
+            <xsd:sequence>
+                    <xsd:element name="hotels" type="tns:HotelArrayType"/>
+                    <xsd:element name="flights" type="tns:FlightArrayType"/>
+            </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HotelArrayType">
+    <xsd:sequence>
+      <xsd:element name="item" type="tns:hotelItem" nillable="false" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="hotelItem">
+     <xsd:sequence>
+        <xsd:element name="booked" type="xsd:string"/>
+        <xsd:element name="hotelInfo" type="ns2:HotelInfo"/>
+     </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FlightArrayType">
+    <xsd:sequence>
+      <xsd:element name="item" type="tns:flightItem" nillable="false" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="flightItem">
+     <xsd:sequence>
+        <xsd:element name="booked" type="xsd:string"/>
+        <xsd:element name="flightInfo" type="ns3:FlightInfo"/>
+     </xsd:sequence>
+  </xsd:complexType>
+  
+
+  <!-- Types related to customer id -->
+<xsd:complexType name="IdType">
+    <xsd:sequence>
+        <xsd:element name="id" type="tns:customerIdType"></xsd:element>
+    </xsd:sequence>
+</xsd:complexType>
+  <xsd:simpleType name="customerIdType">
+      <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+
+</xsd:schema>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="TravelGood" targetNamespace="http://TravelGood" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://TravelGood" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xsd:schema> 
+          <xsd:import namespace="http://TravelGood" schemaLocation="http://10.16.163.172:9080/BPELComposite-sun-http-binding/TravelGoodBPEL/TravelGood_schema1.xsd"/>
+        </xsd:schema>
+  </types>
+  <message name="BookItinerary">
+    <part name="body" element="tns:BookItinerary">
+    </part>
+  </message>
+  <message name="GetHotelsResponse">
+    <part name="body" element="tns:GetHotelsResponse">
+    </part>
+  </message>
+  <message name="StartItineraryResponse">
+    <part name="body" element="tns:StartItineraryResponse">
+    </part>
+  </message>
+  <message name="CancelItineraryResponse">
+    <part name="body" element="tns:CancelItineraryResponse">
+    </part>
+  </message>
+  <message name="AddFlight">
+    <part name="body" element="tns:AddFlight">
+    </part>
+  </message>
+  <message name="BookItineraryResponse">
+    <part name="body" element="tns:BookItineraryResponse">
+    </part>
+  </message>
+  <message name="AddHotelResponse">
+    <part name="body" element="tns:AddHotelResponse">
+    </part>
+  </message>
+  <message name="GetHotels">
+    <part name="body" element="tns:GetHotels">
+    </part>
+  </message>
+  <message name="CancelItinerary">
+    <part name="body" element="tns:CancelItinerary">
+    </part>
+  </message>
+  <message name="AddFlightResponse">
+    <part name="body" element="tns:AddFlightResponse">
+    </part>
+  </message>
+  <message name="GetFlightsResponse">
+    <part name="body" element="tns:GetFlightsResponse">
+    </part>
+  </message>
+  <message name="GetItineraryResponse">
+    <part name="body" element="tns:GetItineraryResponse">
+    </part>
+  </message>
+  <message name="GetFlights">
+    <part name="body" element="tns:GetFlights">
+    </part>
+  </message>
+  <message name="AddHotel">
+    <part name="body" element="tns:AddHotel">
+    </part>
+  </message>
+  <message name="StartItinerary">
+  </message>
+  <message name="GetItinerary">
+    <part name="body" element="tns:GetItinerary">
+    </part>
+  </message>
+  <portType name="TravelGoodPortType">
+    <operation name="StartItinerary">
+      <input message="tns:StartItinerary">
+    </input>
+      <output message="tns:StartItineraryResponse">
+    </output>
+    </operation>
+    <operation name="GetItinerary">
+      <input message="tns:GetItinerary">
+    </input>
+      <output message="tns:GetItineraryResponse">
+    </output>
+    </operation>
+    <operation name="BookItinerary">
+      <input message="tns:BookItinerary">
+    </input>
+      <output message="tns:BookItineraryResponse">
+    </output>
+    </operation>
+    <operation name="CancelItinerary">
+      <input message="tns:CancelItinerary">
+    </input>
+      <output message="tns:CancelItineraryResponse">
+    </output>
+    </operation>
+    <operation name="GetHotels">
+      <input message="tns:GetHotels">
+    </input>
+      <output message="tns:GetHotelsResponse">
+    </output>
+    </operation>
+    <operation name="AddHotel">
+      <input message="tns:AddHotel">
+    </input>
+      <output message="tns:AddHotelResponse">
+    </output>
+    </operation>
+    <operation name="GetFlights">
+      <input message="tns:GetFlights">
+    </input>
+      <output message="tns:GetFlightsResponse">
+    </output>
+    </operation>
+    <operation name="AddFlight">
+      <input message="tns:AddFlight">
+    </input>
+      <output message="tns:AddFlightResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="TravelGoodPortBinding" type="tns:TravelGoodPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="StartItinerary">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetItinerary">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="BookItinerary">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CancelItinerary">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetHotels">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="AddHotel">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetFlights">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="AddFlight">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TravelGood">
+    <port name="TravelGoodPort" binding="tns:TravelGoodPortBinding">
+      <soap:address location="http://10.16.163.172:9080/service"/>
+    </port>
+  </service>
+    <vprop:property name="CustomerId" type="ns16:customerIdType" xmlns:ns16="http://TravelGood"/>
+    <vprop:propertyAlias messageType="tns:GetHotels" part="body" propertyName="tns:CustomerId">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias messageType="tns:StartItineraryResponse" part="body" propertyName="tns:CustomerId">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias messageType="tns:BookItinerary" part="body" propertyName="tns:CustomerId">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias messageType="tns:CancelItinerary" part="body" propertyName="tns:CustomerId">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias messageType="tns:GetItinerary" part="body" propertyName="tns:CustomerId">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias messageType="tns:AddHotel" part="body" propertyName="tns:CustomerId">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias messageType="tns:GetFlights" part="body" propertyName="tns:CustomerId">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias messageType="tns:AddFlight" part="body" propertyName="tns:CustomerId">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+</definitions>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Author: Mathias Svendsen -->
+
+<definitions name="TravelGood" targetNamespace="http://TravelGood"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+             xmlns:tns="http://TravelGood"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop">
+    
+    <types>
+        <xsd:schema> 
+            <xsd:import namespace="http://TravelGood" schemaLocation="TravelGood_schema1.xsd"/>
+        </xsd:schema>
+    </types>
+    
+    <!-- Itinerary related messages -->
+    <message name="StartItinerary"/>
+    <message name="StartItineraryResponse">
+        <part xmlns:ns1="http://TravelGood" name="body" element="ns1:StartItineraryResponse"/>
+    </message>
+    <message name="GetItinerary">
+        <part xmlns:ns2="http://TravelGood" name="body" element="ns2:GetItinerary"/>
+    </message>
+    <message name="GetItineraryResponse">
+        <part xmlns:ns3="http://TravelGood" name="body" element="ns3:GetItineraryResponse"/>
+    </message>
+    <message name="BookItinerary">
+        <part xmlns:ns4="http://TravelGood" name="body" element="ns4:BookItinerary"/>
+    </message>
+    <message name="BookItineraryResponse">
+        <part xmlns:ns5="http://TravelGood" name="body" element="ns5:BookItineraryResponse"/>
+    </message>
+    <message name="CancelItinerary">
+        <part xmlns:ns6="http://TravelGood" name="body" element="ns6:CancelItinerary"/>
+    </message>
+    <message name="CancelItineraryResponse">
+        <part xmlns:ns7="http://TravelGood" name="body" element="ns7:CancelItineraryResponse"/>
+    </message>
+    
+    <!-- NiceView related messages -->
+    <message name="GetHotels">
+        <part xmlns:ns8="http://TravelGood" name="body" element="ns8:GetHotels"/>
+    </message>
+    <message name="GetHotelsResponse">
+        <part xmlns:ns9="http://TravelGood" name="body" element="ns9:GetHotelsResponse"/>
+    </message>
+    <message name="AddHotel">
+        <part xmlns:ns10="http://TravelGood" name="body" element="ns10:AddHotel"/>
+    </message>
+    <message name="AddHotelResponse">
+        <part xmlns:ns11="http://TravelGood" name="body" element="ns11:AddHotelResponse"/>
+    </message>
+
+    <!-- LameDuck related messages -->
+    <message name="GetFlights">
+        <part xmlns:ns12="http://TravelGood" name="body" element="ns12:GetFlights"/>
+    </message>
+    <message name="GetFlightsResponse">
+        <part xmlns:ns13="http://TravelGood" name="body" element="ns13:GetFlightsResponse"/>
+    </message>
+    <message name="AddFlight">
+        <part xmlns:ns14="http://TravelGood" name="body" element="ns14:AddFlight"/>
+    </message>
+    <message name="AddFlightResponse">
+        <part xmlns:ns15="http://TravelGood" name="body" element="ns15:AddFlightResponse"/>
+    </message>
+    
+    
+    <portType name="TravelGoodPortType">
+        <!-- TravelGood Operations -->
+        <operation name="StartItinerary">
+            <input message="tns:StartItinerary"/>
+            <output message="tns:StartItineraryResponse"/>
+        </operation>
+        <operation name="GetItinerary">
+            <input message="tns:GetItinerary"/>
+            <output message="tns:GetItineraryResponse"/>
+        </operation>
+        <operation name="BookItinerary">
+            <input message="tns:BookItinerary"/>
+            <output message="tns:BookItineraryResponse"/>
+        </operation>
+        <operation name="CancelItinerary">
+            <input message="tns:CancelItinerary"/>
+            <output message="tns:CancelItineraryResponse"/>
+        </operation>
+        
+        <!-- NiceView Related Operations -->
+        <operation name="GetHotels">
+            <input message="tns:GetHotels"/>
+            <output message="tns:GetHotelsResponse"/>
+        </operation>
+        <operation name="AddHotel">
+            <input message="tns:AddHotel"/>
+            <output message="tns:AddHotelResponse"/>
+        </operation>
+        
+        <!-- LameDuck Related Operations -->
+        <operation name="GetFlights">
+            <input message="tns:GetFlights"/>
+            <output message="tns:GetFlightsResponse"/>
+        </operation>
+        <operation name="AddFlight">
+            <input message="tns:AddFlight"/>
+            <output message="tns:AddFlightResponse"/>
+        </operation>
+    </portType>
+    
+    <binding name="TravelGoodPortBinding" type="tns:TravelGoodPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    
+        <!-- TravelGood -->
+        <operation name="StartItinerary">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="GetItinerary">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="BookItinerary">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="CancelItinerary">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    
+        <!-- NiceView -->
+        <operation name="GetHotels">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="AddHotel">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    
+        <!-- LameDuck -->
+        <operation name="GetFlights">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="AddFlight">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    
+    </binding>
+    
+    <service name="TravelGood">
+        <port name="TravelGoodPort" binding="tns:TravelGoodPortBinding">
+            <soap:address location="http://localhost:${HttpDefaultPort}/service"/>
+        </port>
+    </service>
+    <vprop:property xmlns:ns16="http://TravelGood" name="CustomerId" type="ns16:customerIdType"/>
+    <vprop:propertyAlias propertyName="tns:CustomerId" messageType="tns:GetHotels" part="body">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:CustomerId" messageType="tns:StartItineraryResponse" part="body">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:CustomerId" messageType="tns:BookItinerary" part="body">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:CustomerId" messageType="tns:CancelItinerary" part="body">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:CustomerId" messageType="tns:GetItinerary" part="body">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:CustomerId" messageType="tns:AddHotel" part="body">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:CustomerId" messageType="tns:GetFlights" part="body">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:CustomerId" messageType="tns:AddFlight" part="body">
+        <vprop:query>customerId/id</vprop:query>
+    </vprop:propertyAlias>
+</definitions>

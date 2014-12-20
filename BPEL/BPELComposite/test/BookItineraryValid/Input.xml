@@ -1,0 +1,15 @@
+<soapenv:Envelope xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:customerData">
+  <soapenv:Body>
+    <urn:customerId>
+      <urn:id>33</urn:id>
+    </urn:customerId>
+    <urn:creditCardInfo>
+      <expirationDate>
+        <month>5</month>
+        <year>9</year>
+      </expirationDate>
+      <name>Anne Strandberg</name>
+      <number>50408816</number>
+    </urn:creditCardInfo>
+  </soapenv:Body>
+</soapenv:Envelope>

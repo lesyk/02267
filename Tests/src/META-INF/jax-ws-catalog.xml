@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:9080/service?wsdl" uri="wsdl/localhost_9080/service.wsdl"/>
+    <system systemId="http://10.16.163.172:9080/BPELComposite-sun-http-binding/TravelGoodBPEL/TravelGood_schema1.xsd" uri="wsdl/10.16.163.172_9080/BPELComposite-sun-http-binding/TravelGoodBPEL/TravelGood_schema1.xsd"/>
+    <system systemId="http://10.16.163.172:9080/BPELComposite-sun-http-binding/TravelGoodBPEL/NiceView/NiceView_schema.xsd" uri="wsdl/10.16.163.172_9080/BPELComposite-sun-http-binding/TravelGoodBPEL/NiceView/NiceView_schema.xsd"/>
+    <system systemId="http://10.16.163.172:9080/BPELComposite-sun-http-binding/TravelGoodBPEL/LameDuck/LameDuck_schema.xsd" uri="wsdl/10.16.163.172_9080/BPELComposite-sun-http-binding/TravelGoodBPEL/LameDuck/LameDuck_schema.xsd"/>
+    <system systemId="http://fastmoney.imm.dtu.dk:8080/BankService?xsd=1" uri="wsdl/fastmoney.imm.dtu.dk_8080/BankService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/NiceView/NiceView?wsdl" uri="wsdl/localhost_8080/NiceView/NiceView.wsdl"/>
+    <system systemId="http://localhost:8080/NiceView/NiceView?xsd=1" uri="wsdl/localhost_8080/NiceView/NiceView.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LameDuck/LameDuck?wsdl" uri="wsdl/localhost_8080/LameDuck/LameDuck.wsdl"/>
+    <system systemId="http://localhost:8080/LameDuck/LameDuck?xsd=1" uri="wsdl/localhost_8080/LameDuck/LameDuck.xsd_1.xsd"/>
+    <system systemId="http://fastmoney.imm.dtu.dk:8080/BankService?wsdl" uri="wsdl/fastmoney.imm.dtu.dk_8080/BankService.wsdl"/>
+</catalog>

@@ -1,0 +1,12 @@
+<soapenv:Envelope xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:customerData" xmlns:lam="http://LameDuck">
+  <soapenv:Body>
+    <urn:customerId>
+      <urn:id>33</urn:id>
+    </urn:customerId>
+    <lam:getFlights>
+      <departureCity>Copenhagen</departureCity>
+      <destinationCity>Rome</destinationCity>
+      <dateOfFlight>2015-02-01+01:00</dateOfFlight>
+    </lam:getFlights>
+  </soapenv:Body>
+</soapenv:Envelope>

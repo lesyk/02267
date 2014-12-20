@@ -1,0 +1,49 @@
+# Put ignored files here
+*.save*
+*.orig*
+*.jar
+*.war
+*.ear
+.DS_Store
+
+# RESTful generated files
+/TravelGoodREST/nbproject/private/
+/TravelGoodREST/build/
+/TravelGoodREST/dist/
+/TravelGoodRESTClient/nbproject/private/
+/TravelGoodRESTClient/nbproject/private/
+/TravelGoodRESTClient/build/
+
+# Lameduct generated files
+/LameDuck/nbproj-ect/private/*
+/LameDuck/build/*
+/LameDuck/dist/*
+/LameDuck/LameDuck/nbproject/private/*
+/LameDuck/LameDuck/build/*
+/LameDuck/LameDuck/dist/*
+
+# NiceView generated files
+/NiceView/nbproject/private/*
+/NiceView/dist/*
+/NiceView/build/*
+/NiceView/NiceView/nbproject/private/*
+/NiceView/NiceView/dist/*
+/NiceView/NiceView/build/*
+
+# Test generated files
+/WebServiceTest/dist/
+/WebServiceTest/build/
+
+# BPEL generated files
+BPEL/BPELComposite/nbproject/private/
+BPEL/BPELComposite/src/jbiServiceUnits/
+BPEL/BPELComposite/build/
+BPEL/BPELComposite/dist/
+BPEL/BPELComposite/test/results/
+/WebserviceTest/nbproject/private/
+/WebserviceTest/build/
+/LameDuck/LameDuck/dist/
+/NiceView/NiceView/dist/
+/Tests/build/
+/Tests/nbproject/private/
+/Tests/dist/

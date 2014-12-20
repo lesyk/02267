@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1 (branches/2.1-6844; 2011-07-29T12:07:24+0000) JAXWS-RI/2.2.5 JAXWS/2.2. --><xs:schema xmlns:tns="http://LameDuck" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns2="urn://types.fastmoney.imm.dtu.dk" version="1.0" targetNamespace="http://LameDuck">
+
+	<xs:import schemaLocation="http://fastmoney.imm.dtu.dk:8080/BankService?xsd=1" namespace="urn://types.fastmoney.imm.dtu.dk"/>
+	
+	<xs:element name="FlightFault" nillable="true" type="tns:FlightFaultType"/>
+	<xs:element name="getFlights" nillable="true" type="tns:getFlights"/>
+	<xs:element name="getFlightsResponse" nillable="true" type="tns:getFlightsResponse"/>
+	<xs:element name="bookFlight" nillable="true" type="tns:bookFlight"/>
+	<xs:element name="bookFlightResponse" nillable="true" type="tns:bookFlightResponse"/>
+	<xs:element name="cancelFlight" nillable="true" type="tns:cancelFlight"/>
+	<xs:element name="cancelFlightResponse" nillable="true" type="tns:cancelFlightResponse"/>
+	
+	
+	
+	
+	<xs:complexType name="FlightFaultType">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getFlights">
+		<xs:sequence>
+			<xs:element name="departureCity" type="xs:string"/>
+			<xs:element name="destinationCity" type="xs:string"/>
+			<xs:element name="dateOfFlight" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getFlightsResponse">
+		<xs:sequence>
+			<xs:element name="return" type="tns:FlightInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="bookFlight">
+		<xs:sequence>
+			<xs:element name="bookingNumber" type="xs:int"/>
+			<xs:element name="creditCardInfo" type="ns2:creditCardInfoType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="bookFlightResponse">
+		<xs:sequence>
+			<xs:element name="return" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="cancelFlight">
+		<xs:sequence>
+			<xs:element name="bookingNumber" type="xs:int"/>
+			<xs:element name="creditCardInfo" type="ns2:creditCardInfoType"/>
+			<xs:element name="price" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="cancelFlightResponse">
+		<xs:sequence>
+			<xs:element name="return" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Flight">
+		<xs:sequence>
+			<xs:element name="departureAirport" type="xs:string"/>
+			<xs:element name="arrivalAirport" type="xs:string"/>
+			<xs:element name="departureDate" type="xs:date"/>
+			<xs:element name="arrivalDate" type="xs:date"/>
+			<xs:element name="carrier" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FlightInfo">
+		<xs:sequence>
+			<xs:element name="bookingNumber" type="xs:int"/>
+			<xs:element name="price" type="xs:int"/>
+			<xs:element name="arlineReservationService" type="xs:string"/>
+			<xs:element name="flight" type="tns:Flight"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

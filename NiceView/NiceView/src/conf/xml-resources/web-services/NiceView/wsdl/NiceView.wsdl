@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+			 xmlns:tns="http://NiceView"
+			 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			 xmlns="http://schemas.xmlsoap.org/wsdl/"
+			 targetNamespace="http://NiceView"
+			 name="NiceView">
+
+	<types>
+		<xsd:schema>
+			<xsd:import namespace="http://NiceView" schemaLocation="NiceView_schema.xsd"></xsd:import>
+		</xsd:schema>
+	</types>
+
+	<message name="getHotels">
+		<part xmlns:ns1="http://NiceView" name="parameters" element="ns1:getHotels"></part>
+	</message>
+	<message name="getHotelsResponse">
+		<part xmlns:ns2="http://NiceView" name="parameters" element="ns2:getHotelsResponse"></part>
+	</message>
+	<message name="bookHotel">
+		<part xmlns:ns3="http://NiceView" name="parameters" element="ns3:bookHotel"></part>
+	</message>
+	<message name="bookHotelResponse">
+		<part xmlns:ns4="http://NiceView" name="parameters" element="ns4:bookHotelResponse"></part>
+	</message>
+	<message name="cancelHotel">
+		<part xmlns:ns5="http://NiceView" name="parameters" element="ns5:cancelHotel"></part>
+	</message>
+	<message name="cancelHotelResponse">
+		<part xmlns:ns6="http://NiceView" name="parameters" element="ns6:cancelHotelResponse"></part>
+	</message>
+	<message name="HotelFaultMessage">
+		<part xmlns:ns7="http://NiceView" name="parameters" element="ns7:HotelFault"></part>
+	</message>
+	
+	<portType name="NiceViewPortType">
+		<operation name="getHotels">
+			<input message="tns:getHotels"></input>
+			<output message="tns:getHotelsResponse"></output>
+		</operation>
+		<operation name="bookHotel">
+			<input message="tns:bookHotel"></input>
+			<output message="tns:bookHotelResponse"></output>
+			<fault message="tns:HotelFaultMessage" name="HotelFaultMessage"></fault>
+		</operation>
+		<operation name="cancelHotel">
+			<input message="tns:cancelHotel"></input>
+			<output message="tns:cancelHotelResponse"></output>
+			<fault message="tns:HotelFaultMessage" name="HotelFaultMessage"></fault>
+		</operation>
+	</portType>
+	
+	<binding name="NiceViewPortBinding" type="tns:NiceViewPortType">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+		<operation name="getHotels">
+			<soap:operation soapAction=""></soap:operation>
+			<input>
+				<soap:body use="literal"></soap:body>
+			</input>
+			<output>
+				<soap:body use="literal"></soap:body>
+			</output>
+		</operation>
+		<operation name="bookHotel">
+			<soap:operation soapAction=""></soap:operation>
+			<input>
+				<soap:body use="literal"></soap:body>
+			</input>
+			<output>
+				<soap:body use="literal"></soap:body>
+			</output>
+			<fault name="HotelFaultMessage">
+				<soap:fault name="HotelFaultMessage"></soap:fault>
+			</fault>
+		</operation>
+		<operation name="cancelHotel">
+			<soap:operation soapAction=""></soap:operation>
+			<input>
+				<soap:body use="literal"></soap:body>
+			</input>
+			<output>
+				<soap:body use="literal"></soap:body>
+			</output>
+			<fault name="HotelFaultMessage">
+				<soap:fault name="HotelFaultMessage"></soap:fault>
+			</fault>
+		</operation>
+	</binding>
+	
+	<service name="NiceView">
+		<port name="NiceViewPort" binding="tns:NiceViewPortBinding">
+			<soap:address location="http://localhost:8080/NiceView/NiceView"/>
+		</port>
+	</service>
+</definitions>

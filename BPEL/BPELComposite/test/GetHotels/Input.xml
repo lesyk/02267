@@ -1,0 +1,12 @@
+<soapenv:Envelope xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:customerData" xmlns:nic="http://NiceView">
+  <soapenv:Body>
+    <urn:customerId>
+      <urn:id>33</urn:id>
+    </urn:customerId>
+    <nic:getHotels>
+      <city>Copenhagen</city>
+      <arrivalDate>2008-09-29</arrivalDate>
+      <departureDate>2014-09-19</departureDate>
+    </nic:getHotels>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,19 @@
+<soapenv:Envelope xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:customerData">
+  <soapenv:Body>
+    <urn:customerId>
+      <urn:id>33</urn:id>
+    </urn:customerId>
+    <urn:flight>
+      <bookingNumber>1</bookingNumber>
+        <price>220</price>
+        <arlineReservationService>LameDuck</arlineReservationService>
+        <flight>
+          <departureAirport>Copenhagen</departureAirport>
+          <arrivalAirport>Rome</arrivalAirport>
+          <departureDate>2015-2-29T14:55:8.45+01:00</departureDate>
+          <arrivalDate>2015-02-01+01:00</arrivalDate>
+          <carrier>Virgin Airlines</carrier>
+        </flight>
+    </urn:flight>
+  </soapenv:Body>
+</soapenv:Envelope>

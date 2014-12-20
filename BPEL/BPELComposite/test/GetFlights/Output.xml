@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Body>
+    <getFlightsResponse xmlns="http://LameDuck" xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:msgns="http://LameDuck" xmlns:ns0="http://j2ee.netbeans.org/wsdl/TravelGoodBPEL/src/TravelGood" xmlns:ns2="urn://types.fastmoney.imm.dtu.dk" xmlns:ns3="http://LameDuck"/>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

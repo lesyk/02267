@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1 (branches/2.1-6844; 2011-07-29T12:07:24+0000) JAXWS-RI/2.2.5 JAXWS/2.2. --><xs:schema xmlns:tns="http://niceview/" xmlns:ns1="urn://types.fastmoney.imm.dtu.dk" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://niceview/">
+
+<xs:import namespace="urn://types.fastmoney.imm.dtu.dk" schemaLocation="http://localhost:8080/NiceView/NiceView?xsd=1"/>
+
+<xs:element name="HotelFaultMessage" type="tns:HotelFaultMessage"/>
+
+<xs:element name="bookHotel" type="tns:bookHotel"/>
+
+<xs:element name="bookHotelResponse" type="tns:bookHotelResponse"/>
+
+<xs:element name="cancelHotel" type="tns:cancelHotel"/>
+
+<xs:element name="cancelHotelResponse" type="tns:cancelHotelResponse"/>
+
+<xs:element name="getHotels" type="tns:getHotels"/>
+
+<xs:element name="getHotelsResponse" type="tns:getHotelsResponse"/>
+
+<xs:complexType name="cancelHotel">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cancelHotelResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="HotelFaultMessage">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getHotels">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="arg2" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getHotelsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:hotelInfo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hotelInfo">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="address" type="xs:string" minOccurs="0"/>
+<xs:element name="bookingNumber" type="xs:int"/>
+<xs:element name="price" type="xs:int"/>
+<xs:element name="creditCardGuaranteeRequired" type="xs:boolean"/>
+<xs:element name="hotelReservationService" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bookHotel">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="ns1:creditCardInfoType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bookHotelResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

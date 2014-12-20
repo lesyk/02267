@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns0="http://enterprise.netbeans.org/bpel/TravelGoodBPEL/travelGoodBPEL" xmlns:ns1="http://TravelGood" xmlns:ns2="http://NiceView" xmlns:ns3="http://LameDuck" xmlns:ns4="http://www.sun.com/jbi/descriptor/service-unit" version="1.0">
+    <services binding-component="false">
+        <provides endpoint-name="TravelGoodRole_myRole" interface-name="ns1:TravelGoodPortType" service-name="ns0:TravelGood">
+            <ns4:display-name>TravelGood</ns4:display-name>
+            <ns4:process-name>travelGoodBPEL</ns4:process-name>
+            <ns4:file-path>travelGoodBPEL.bpel</ns4:file-path>
+        </provides>
+        <consumes endpoint-name="NiceViewRole_partnerRole" interface-name="ns2:NiceViewPortType" service-name="ns0:NiceView">
+            <ns4:display-name>NiceView</ns4:display-name>
+            <ns4:process-name>travelGoodBPEL</ns4:process-name>
+            <ns4:file-path>travelGoodBPEL.bpel</ns4:file-path>
+        </consumes>
+        <consumes endpoint-name="LameDuckRole_partnerRole" interface-name="ns3:LameDuckPortType" service-name="ns0:LameDuck">
+            <ns4:display-name>LameDuck</ns4:display-name>
+            <ns4:process-name>travelGoodBPEL</ns4:process-name>
+            <ns4:file-path>travelGoodBPEL.bpel</ns4:file-path>
+        </consumes>
+    </services>
+</jbi>
